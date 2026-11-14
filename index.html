@@ -65,7 +65,71 @@
       font-size: 13px;
       color: var(--muted);
     }
-    .legend span strong { color: var(--star); }
+    .answer:empty:before {
+      content: attr(data-placeholder);
+      color: #9aa3b2;
+    }
+    .answer.is-locked {
+      border-style: solid;
+      border-color: #cfd6e0;
+      background: #f3f5f8;
+      color: var(--ink);
+      cursor: default;
+    }
+    .toolbar {
+      position: sticky;
+      bottom: 0;
+      margin-top: 24px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 -6px 24px rgba(28,36,48,0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .toolbar .status {
+      font-size: 13.5px;
+      color: var(--muted);
+      flex: 1 1 200px;
+    }
+    .toolbar .status.locked {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .toolbar .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 650;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    body.is-locked .btn-primary { display: none; }
+    @media print {
+      .toolbar { display: none; }
+    }
     section {
       background: var(--card);
       border: 1px solid var(--line);
@@ -198,7 +262,7 @@
         現場の流れと、動画2本の方向性を一緒に確認するためのシートです。
       </p>
       <div class="legend">
-        <span>日付：＿＿＿＿／＿＿＿＿</span>
+        <span>日付：2026年11月16日</span>
       </div>
     </header>
 
@@ -216,7 +280,7 @@
           <span class="chip">ネット・SNS</span>
           <span class="chip">その他</span>
         </div>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
@@ -230,30 +294,30 @@
           <span class="chip">夜・土日に来やすい</span>
           <span class="chip">東洋医学寄り</span>
         </div>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
         <p class="q"><span class="star">★</span><span>患者さんは、どんな気持ち・期待で接骨院（当院）に来ることが多いですか。</span></p>
         <p class="hint">例：病院の痛み止めとは違うことを期待／手技で楽になりたい／根本を見てもらいたい／薬に頼りたくない／すぐ診てほしい、など。動画1本目の「教育」のトーンを合わせるために必須です。</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
         <p class="q"><span class="star">★</span><span>「病院・痛み止めで一時的に楽にする」のと、「ほぐし・はりきゅうでアプローチする」の違いを、普段どう説明されていますか。</span></p>
         <p class="hint">患者さんに伝わる言葉で。1本目に教育的に入れる候補です。使いたくない表現・言い過ぎ注意も教えてください。</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
         <p class="q"><span class="star">★</span><span>病院（西洋医学）で「もうこれ以上できることはない」と言われたのに、まだ痛い方は来られますか。</span></p>
         <p class="hint">その場合、当院で何ができるか／どこまで楽になる・整う可能性があるか。動画に入れると説得感が出やすい候補です。半年通う意味にもつながります。</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
         <p class="q"><span class="star">★</span><span>その方には、普段どんな説明をしていますか。（言い過ぎ注意も含めて）</span></p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
     </section>
 
@@ -265,7 +329,7 @@
       <div class="item">
         <p class="q"><span class="star">★</span><span>当院の対応外になりやすい疾患・症状は何ですか。</span></p>
         <p class="hint">例：骨折の疑い、脱臼、神経症状が強い、内臓由来の痛み、緊急性が高い、など。</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
@@ -276,12 +340,12 @@
           <span class="chip">ケースによる</span>
         </div>
         <p class="hint">病院と併診するなら、当院では何をする／しないか。動画や説明で触れてよい範囲も教えてください。</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
         <p class="q"><span class="star">★</span><span>「ここは病院」「ここは当院」の線引きを、初診の方にどう伝えていますか。</span></p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
     </section>
 
@@ -293,13 +357,13 @@
       <div class="item">
         <p class="q"><span class="star">★</span><span>料金の流れを教えてください。</span></p>
         <p class="hint">1回目／2回目（体験）／その後1回あたり</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
         <p class="q"><span class="star">★</span><span>半年間は、都度払いですか。一括プランはありますか。</span></p>
         <p class="hint">ある場合：都度との金額差／治ったら卒業か、メンテ継続か</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
@@ -311,7 +375,7 @@
           <span class="chip">月○回</span>
           <span class="chip">人による</span>
         </div>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
@@ -321,7 +385,7 @@
           <span class="chip">施術後の3本目</span>
           <span class="chip">まだわからない</span>
         </div>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
     </section>
 
@@ -333,7 +397,7 @@
       <div class="item">
         <p class="q"><span class="star">★</span><span>ほぐしと、はりきゅうで、体の何がどう変わりますか。</span></p>
         <p class="hint">患者さんに普段、どう説明されていますか。</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
     </section>
 
@@ -349,13 +413,13 @@
           <span class="chip">「このあと詳しく」→事務へつなぐ</span>
           <span class="chip">その他</span>
         </div>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
         <p class="q"><span class="star">★</span><span>2回目の終わりで、一度クロージングされていますか。</span></p>
         <p class="hint">その場で決まらなかったとき、次はどうされていますか。</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
     </section>
 
@@ -371,7 +435,7 @@
           <span class="chip">まとめて1対多</span>
           <span class="chip">1対1を人数分</span>
         </div>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
     </section>
 
@@ -429,7 +493,7 @@
 
       <div class="item" style="border-top:none;padding-top:12px;">
         <p class="q"><span class="star">★</span><span>1本目について、足したい／避けたい表現はありますか。</span></p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
     </section>
 
@@ -485,13 +549,13 @@
 
       <div class="item" style="border-top:none;padding-top:12px;">
         <p class="q"><span class="star">★</span><span>2本目について、足したい／避けたい表現はありますか。</span></p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
 
       <div class="item">
         <p class="q"><span class="star">★</span><span>「一時しのぎ vs 半年間で体をつくる」の対比は、このまま使ってよいですか。</span></p>
         <p class="hint">医療・表現のニュアンスは、最終的に院長先生のご確認前提です。</p>
-        <div class="answer" contenteditable="true">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
       </div>
     </section>
 
@@ -500,13 +564,131 @@
       <h2>8. その他・補足</h2>
       <div class="item">
         <p class="q"><span style="width:1.1em;display:inline-block;"></span><span>ほかに、動画や現場導線で共有しておきたいことはありますか。</span></p>
-        <div class="answer" contenteditable="true" style="margin-left:0;">メモ・回答</div>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力" style="margin-left:0;"></div>
       </div>
     </section>
 
+    <div class="toolbar" id="toolbar">
+      <div class="status" id="lockStatus">記入中です。終わったら「保存してロック」を押すと、あとから編集できなくなります。</div>
+      <div class="actions">
+        <button type="button" class="btn" id="btnDownload">記入内容をHTMLで保存</button>
+        <button type="button" class="btn btn-primary" id="btnLock">保存してロック</button>
+      </div>
+    </div>
+
     <footer>
-      nARK（緒方和奈）　本シートは打合せ用です。表現・医療広告の最終確認は貴院にてお願いします。
+      nARK（緒方和奈）　本シートは打合せ用です。表現・医療広告の最終確認は貴院にてお願いします。<br />
+      ※ロック状態はこのブラウザに保存されます。共有・保管用に「記入内容をHTMLで保存」もご利用ください。
     </footer>
   </div>
+  <script>
+    (function () {
+      var STORAGE_KEY = "gokigen-hearing-2026-11-16";
+      var answers = Array.prototype.slice.call(document.querySelectorAll(".answer"));
+      var statusEl = document.getElementById("lockStatus");
+      var btnLock = document.getElementById("btnLock");
+      var btnDownload = document.getElementById("btnDownload");
+
+      function getTexts() {
+        return answers.map(function (el) {
+          return (el.innerText || "").trim();
+        });
+      }
+
+      function applyTexts(texts) {
+        answers.forEach(function (el, i) {
+          if (texts && texts[i] != null && String(texts[i]).trim() !== "") {
+            el.textContent = texts[i];
+          }
+        });
+      }
+
+      function setLocked(locked) {
+        document.body.classList.toggle("is-locked", locked);
+        answers.forEach(function (el) {
+          el.contentEditable = locked ? "false" : "true";
+          el.classList.toggle("is-locked", locked);
+        });
+        if (locked) {
+          statusEl.textContent = "ロック済み（このブラウザでは編集できません）";
+          statusEl.classList.add("locked");
+          btnLock.disabled = true;
+        } else {
+          statusEl.textContent = "記入中です。終わったら「保存してロック」を押すと、あとから編集できなくなります。";
+          statusEl.classList.remove("locked");
+          btnLock.disabled = false;
+        }
+      }
+
+      function persist(locked) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            locked: !!locked,
+            texts: getTexts(),
+            savedAt: new Date().toISOString()
+          }));
+        } catch (e) {}
+      }
+
+      function restore() {
+        try {
+          var raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return;
+          var data = JSON.parse(raw);
+          applyTexts(data.texts || []);
+          setLocked(!!data.locked);
+        } catch (e) {}
+      }
+
+      // Autosave drafts while editing (unlocked only)
+      answers.forEach(function (el) {
+        el.addEventListener("input", function () {
+          if (!document.body.classList.contains("is-locked")) {
+            persist(false);
+          }
+        });
+      });
+
+      btnLock.addEventListener("click", function () {
+        if (document.body.classList.contains("is-locked")) return;
+        var ok = window.confirm("保存してロックしますか？\nロック後は、このシート上では内容を変更できません。");
+        if (!ok) return;
+        persist(true);
+        setLocked(true);
+      });
+
+      btnDownload.addEventListener("click", function () {
+        // Snapshot current DOM as a locked static HTML file
+        var clone = document.documentElement.cloneNode(true);
+        var cloneAnswers = clone.querySelectorAll(".answer");
+        var texts = getTexts();
+        cloneAnswers.forEach(function (el, i) {
+          el.removeAttribute("contenteditable");
+          el.classList.add("is-locked");
+          el.textContent = texts[i] || "";
+        });
+        var tb = clone.querySelector("#toolbar");
+        if (tb) tb.remove();
+        var scripts = clone.querySelectorAll("script");
+        scripts.forEach(function (s) { s.remove(); });
+        clone.querySelector("body").classList.add("is-locked");
+        var note = document.createElement("p");
+        note.style.cssText = "margin:16px 20px;color:#2c6b5a;font-weight:700;font-size:14px;";
+        note.textContent = "このファイルはロック済みの保存用コピーです（2026-11-16）。";
+        var wrap = clone.querySelector(".wrap");
+        if (wrap) wrap.insertBefore(note, wrap.firstChild);
+
+        var html = "<!DOCTYPE html>\n" + clone.outerHTML;
+        var blob = new Blob([html], { type: "text/html;charset=utf-8" });
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "ゴキゲンホネグミ_ヒアリングシート_2026-11-16.html";
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+
+      restore();
+    })();
+  </script>
 </body>
 </html>

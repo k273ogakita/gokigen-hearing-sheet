@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ヒアリングシート｜患者説明動画（ゴキゲンホネグミ様）</title>
+  <style>
+    :root {
+      --ink: #1c2430;
+      --muted: #5e6a7a;
+      --line: #d8dee8;
+      --bg: #f6f3ee;
+      --card: #ffffff;
+      --accent: #2c6b5a;
+      --accent-soft: #e7f1ed;
+      --star: #b45309;
+      --note: #f3efe8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #efe9e0 0%, transparent 28%),
+        var(--bg);
+      font-family: "Hiragino Sans", "Avenir Next", "Noto Sans JP", sans-serif;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 36px 20px 72px;
+    }
+    header {
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    h1 {
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0 0 10px;
+      letter-spacing: 0.02em;
+    }
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 40em;
+      font-size: 14.5px;
+    }
+    .legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .legend span strong { color: var(--star); }
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px 20px 16px;
+      margin: 16px 0;
+    }
+    h2 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .sec-lead {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .item {
+      border-top: 1px solid var(--line);
+      padding: 12px 0;
+    }
+    .item:first-of-type { border-top: none; padding-top: 0; }
+    .q {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      font-weight: 650;
+      margin: 0 0 6px;
+    }
+    .star {
+      color: var(--star);
+      flex: 0 0 auto;
+      font-weight: 800;
+    }
+    .hint {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 13.5px;
+      padding-left: 1.35em;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-left: 1.35em;
+      margin-bottom: 8px;
+    }
+    .chip {
+      font-size: 12.5px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--ink);
+    }
+    .answer {
+      margin-left: 1.35em;
+      min-height: 52px;
+      border: 1px dashed #c9d0db;
+      border-radius: 8px;
+      background: #fafbfc;
+      padding: 10px 12px;
+      color: #9aa3b2;
+      font-size: 13px;
+    }
+    .answer[contenteditable="true"]:focus {
+      outline: 2px solid #9ec5b8;
+      color: var(--ink);
+      background: #fff;
+    }
+    .dir-block {
+      background: var(--note);
+      border-radius: 10px;
+      padding: 14px 14px 8px;
+      margin: 10px 0 14px;
+    }
+    .dir-block h3 {
+      margin: 0 0 8px;
+      font-size: 14.5px;
+    }
+    ul.must {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul.must li {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      padding: 8px 0;
+      border-top: 1px solid #e4ddd2;
+      font-size: 14px;
+    }
+    ul.must li:first-child { border-top: none; }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #fff;
+      border: 1px solid #e0d6c8;
+      color: var(--star);
+      margin-right: 4px;
+      flex: 0 0 auto;
+    }
+    .optional .tag {
+      color: var(--muted);
+      border-color: #d9dde5;
+    }
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    @media print {
+      body { background: #fff; }
+      section { break-inside: avoid; }
+      .answer { min-height: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="brand">nARK × ゴキゲンホネグミ様</p>
+      <h1>患者説明動画　ヒアリングシート</h1>
+      <p class="lead">
+        現場の流れと、動画2本の方向性を一緒に確認するためのシートです。
+        記入欄はそのままメモにも使えます。
+      </p>
+      <div class="legend">
+        <span><strong>★</strong>＝必須で確認したい項目</span>
+        <span>日付：＿＿＿＿／＿＿＿＿</span>
+        <span>ご記入：＿＿＿＿＿＿＿＿</span>
+      </div>
+    </header>
+
+    <!-- 1. 患者 -->
+    <section>
+      <h2>1. 患者さん・来院について</h2>
+      <p class="sec-lead">どんな方に、どんな言葉が刺さるかを揃えるための確認です。</p>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>初診の方は、どんな経緯で来られることが多いですか。</span></p>
+        <div class="chips">
+          <span class="chip">いきなり来院</span>
+          <span class="chip">整形外科のあと</span>
+          <span class="chip">紹介</span>
+          <span class="chip">ネット・SNS</span>
+          <span class="chip">その他</span>
+        </div>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>よく来られる方は、どんなタイプが多いですか。</span></p>
+        <div class="chips">
+          <span class="chip">病院ほどじゃないと思っている</span>
+          <span class="chip">整形で異常なしと言われた</span>
+          <span class="chip">とにかくすぐ楽になりたい</span>
+          <span class="chip">待ち時間がつらい</span>
+          <span class="chip">薬を飲みたくない</span>
+          <span class="chip">夜・土日に来やすい</span>
+          <span class="chip">東洋医学寄り</span>
+        </div>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+    </section>
+
+    <!-- 2. 料金 -->
+    <section>
+      <h2>2. 料金・半年の通い方</h2>
+      <p class="sec-lead">動画の「半年」の見せ方と、院の料金設計を合わせるための確認です。</p>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>料金の流れを教えてください。</span></p>
+        <p class="hint">1回目／2回目（体験）／その後1回あたり</p>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>半年間は、都度払いですか。一括プランはありますか。</span></p>
+        <p class="hint">ある場合：都度との金額差／半年間の想定来院回数／治ったら卒業か、メンテ継続か</p>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>半年の説明は、どのタイミングの動画がよいですか。</span></p>
+        <div class="chips">
+          <span class="chip">2本目（2回目来院時）</span>
+          <span class="chip">施術後の3本目</span>
+          <span class="chip">まだわからない</span>
+        </div>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+    </section>
+
+    <!-- 3. 施術 -->
+    <section>
+      <h2>3. 施術の理解（ほぐし・はりきゅう）</h2>
+      <p class="sec-lead">動画の言葉を、現場の先生の言葉に揃えるための確認です。</p>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>ほぐしと、はりきゅうで、体の何がどう変わりますか。</span></p>
+        <p class="hint">患者さんに普段、どう説明されていますか。</p>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+    </section>
+
+    <!-- 4. クロージング -->
+    <section>
+      <h2>4. いまのクロージング</h2>
+      <p class="sec-lead">動画は説明の置き換えではなく、院長先生のクロージングの前段にします。</p>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>いま、院長先生はどのようにクロージングされていますか。</span></p>
+        <div class="chips">
+          <span class="chip">その場で説明→契約書</span>
+          <span class="chip">「このあと詳しく」→事務へつなぐ</span>
+          <span class="chip">その他</span>
+        </div>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>2回目の終わりで、一度クロージングされていますか。</span></p>
+        <p class="hint">その場で決まらなかったとき、次はどうされていますか。</p>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+    </section>
+
+    <!-- 5. MTG -->
+    <section>
+      <h2>5. 伴走・ミーティングの体制</h2>
+      <p class="sec-lead">複数院長がいらっしゃる場合の、意見のまとめ方の確認です。</p>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>月次ミーティングは、どなたとお話しするのがよいですか。</span></p>
+        <div class="chips">
+          <span class="chip">窓口の方が意見をまとめて1対1</span>
+          <span class="chip">まとめて1対多</span>
+          <span class="chip">1対1を人数分</span>
+        </div>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+    </section>
+
+    <!-- 6. 1本目 -->
+    <section>
+      <h2>6. 1本目の動画の方向性</h2>
+      <p class="sec-lead">初回・施術前に見ていただく想定です。「理解」と「1回で終わらない種まき」まで。</p>
+
+      <div class="dir-block">
+        <h3>役割（案）</h3>
+        <p style="margin:0 0 8px;font-size:14px;">
+          ほぐし・はりきゅうが何をするのかを伝え、今日の施術への安心をつくる。
+          あわせて、痛みは1回では終わりにくいことへの納得の種をまく。
+          半年プランの本格クロージングは、深追いしない。
+        </p>
+      </div>
+
+      <p style="font-weight:700;margin:0 0 6px;">入れたい要素</p>
+      <ul class="must">
+        <li>
+          <span class="tag">必須</span>
+          <span>ほぐし・はりきゅうとは何か／今から痛みにどう作用するか</span>
+        </li>
+        <li>
+          <span class="tag">必須</span>
+          <span>今日のあと、体に何が起きやすいか（一時的に楽→戻りうる、など現場の実情に合わせる）</span>
+        </li>
+        <li>
+          <span class="tag">必須</span>
+          <span>1回で終わりにくいこと／しばらく続ける必要があることの種まき</span>
+        </li>
+        <li>
+          <span class="tag">必須</span>
+          <span>動診・触診・施術へ自然につなぐ着地</span>
+        </li>
+        <li class="optional">
+          <span class="tag">任意</span>
+          <span>問診につながる面（こういう痛みは、ここから来ていることが多い、など）</span>
+        </li>
+        <li class="optional">
+          <span class="tag">任意</span>
+          <span>よくある来院タイプに寄せた言葉選び（ヒアリング結果を反映）</span>
+        </li>
+      </ul>
+
+      <div class="item" style="border-top:none;padding-top:12px;">
+        <p class="q"><span class="star">★</span><span>1本目について、足したい／避けたい表現はありますか。</span></p>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+    </section>
+
+    <!-- 7. 2本目 -->
+    <section>
+      <h2>7. 2本目の動画の方向性</h2>
+      <p class="sec-lead">2回目来院時。体験の意味を伝え、半年継続への納得（クロージングの前段）をつくります。</p>
+
+      <div class="dir-block">
+        <h3>役割（案）</h3>
+        <p style="margin:0 0 8px;font-size:14px;">
+          前回は痛みを止めた。今日は痛み取りに加えて、体を整える体験をする。
+          一時しのぎではなく、痛みが出にくい健康な体を半年間でつくる、という納得へつなぐ。
+          院長先生のクロージング（契約／事務へのつなぎ）の前段にする。
+        </p>
+      </div>
+
+      <p style="font-weight:700;margin:0 0 6px;">入れたい要素</p>
+      <ul class="must">
+        <li>
+          <span class="tag">必須</span>
+          <span>前回：まず痛みを止めた、という振り返り</span>
+        </li>
+        <li>
+          <span class="tag">必須</span>
+          <span>今日：痛み取り ＋ 体を整える／体験してもらう意味</span>
+        </li>
+        <li>
+          <span class="tag">必須</span>
+          <span>対比：一時しのぎ（例：痛み止めで一時的に軽くなる）ではなく、ごまかすのではなく、痛みが出にくい体・健康な体にしていく</span>
+        </li>
+        <li>
+          <span class="tag">必須</span>
+          <span>半年間の意味（毎日ではない通い方、現場の回数・プランに合わせる）</span>
+        </li>
+        <li>
+          <span class="tag">必須</span>
+          <span>院長クロージングへ渡す着地（その場の契約／「このあと詳しく」で事務へ、など現状に合わせる）</span>
+        </li>
+        <li class="optional">
+          <span class="tag">任意</span>
+          <span>2回目終わりで決まらなかったときの次の一手（動画内 or 口頭導線）</span>
+        </li>
+        <li class="optional">
+          <span class="tag">任意</span>
+          <span>半年プランが一括でお得な場合、その見せ方（ヒアリング次第）</span>
+        </li>
+      </ul>
+
+      <div class="item" style="border-top:none;padding-top:12px;">
+        <p class="q"><span class="star">★</span><span>2本目について、足したい／避けたい表現はありますか。</span></p>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>「一時しのぎ vs 半年間で体をつくる」の対比は、このまま使ってよいですか。</span></p>
+        <p class="hint">医療・表現のニュアンスは、最終的に院長先生のご確認前提です。</p>
+        <div class="answer" contenteditable="true">メモ・回答</div>
+      </div>
+    </section>
+
+    <!-- 8. 補足 -->
+    <section>
+      <h2>8. その他・補足</h2>
+      <div class="item">
+        <p class="q"><span style="width:1.1em;display:inline-block;"></span><span>ほかに、動画や現場導線で共有しておきたいことはありますか。</span></p>
+        <div class="answer" contenteditable="true" style="margin-left:0;">メモ・回答</div>
+      </div>
+    </section>
+
+    <footer>
+      nARK（緒方和奈）　本シートは打合せ用です。料金プランは別紙。表現・医療広告の最終確認は貴院にてお願いします。
+    </footer>
+  </div>
+</body>
+</html>

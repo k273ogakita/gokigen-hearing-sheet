@@ -361,6 +361,51 @@
       </div>
     </section>
 
+    <!-- 1c. 初診〜卒業の流れ -->
+    <section>
+      <h2>1c. 初診から卒業・メンテナンスまでの流れ</h2>
+      <p class="sec-lead">動画の置き場所と、院長先生の説明・クロージングの位置を揃えるための確認です。大まかには次の流れを想定しています。</p>
+      <div class="chips" style="margin-bottom:14px;">
+        <span class="chip">初回来院</span>
+        <span class="chip">問診</span>
+        <span class="chip">検査</span>
+        <span class="chip">初回施術</span>
+        <span class="chip">施術方針の説明</span>
+        <span class="chip">継続施術の提案</span>
+        <span class="chip">定期的な評価</span>
+        <span class="chip">卒業／メンテナンス</span>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>上の大まかな流れで合っていますか。違う／足す／飛ばすところはありますか。</span></p>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>初診の具体的な流れを教えてください。</span></p>
+        <p class="hint">誰が・どんな風に来院するか／誰が受付するか／（動画を見せる場合）そのあとどんな問診をするか／検査は何をするか／初回施術はどう進めるか。時間の目安もわかれば。</p>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>初回の施術（ほぐし・はりきゅう）について、もう少し詳しく教えてください。</span></p>
+        <p class="hint">ほぐし：種類はあるか／何が違うか／患者さんへの説明の言葉。はりきゅう：針の種類／打つところ／時間の目安／患者さんへの説明の言葉。わからないところは「わからない」で大丈夫です。</p>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>施術が終わったあと、院長先生はいまどんな説明をされていますか。</span></p>
+        <p class="hint">体の状態／今日やったこと／このあとどう通うか、など。いつも話している内容で大丈夫です。</p>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
+      </div>
+
+      <div class="item">
+        <p class="q"><span class="star">★</span><span>いままで「クロージング」と呼んでいたのは、流れのどのタイミング・何を指していましたか。</span></p>
+        <p class="hint">例：初回終わり／2回目終わり／施術方針の説明のあと／継続提案の場面／契約・事務へのつなぎ、など。院内での呼び方・意味を揃えたいです。</p>
+        <div class="answer" contenteditable="true" data-placeholder="回答を入力"></div>
+      </div>
+    </section>
+
     <!-- 2. 料金 -->
     <section>
       <h2>2. 料金・半年の通い方</h2>
@@ -646,7 +691,7 @@
   </div>
   <script>
     (function () {
-      var STORAGE_KEY = "gokigen-hearing-2026-11-16";
+      var STORAGE_KEY = "gokigen-hearing-2026-11-16-v2";
       var answers = Array.prototype.slice.call(document.querySelectorAll(".answer"));
       var statusEl = document.getElementById("lockStatus");
       var btnLock = document.getElementById("btnLock");

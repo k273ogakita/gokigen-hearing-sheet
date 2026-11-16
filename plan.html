@@ -87,6 +87,24 @@
       color: var(--accent);
       font-size: 15px;
     }
+    .sub {
+      display: block;
+      margin-top: 6px;
+      font-weight: 400;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .fit {
+      display: block;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--line);
+      font-weight: 650;
+      font-size: 12.5px;
+      color: var(--ink);
+      line-height: 1.45;
+    }
     .note {
       font-size: 12.5px;
       color: var(--muted);
@@ -169,15 +187,23 @@
       <thead>
         <tr>
           <th style="width:22%"></th>
-          <th>プランA　年契約</th>
-          <th>プランB　月額型</th>
+          <th>プランA　年契約<br /><span style="font-weight:400;font-size:12.5px">初年度費用　65万円</span></th>
+          <th>プランB　月額型<br /><span style="font-weight:400;font-size:12.5px">初年度費用　制作23万＋店舗1万×店数＋月3万×12</span></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th>初年度の目安</th>
-          <td><span class="price">65万円</span><br />制作＋伴走＋店舗利用</td>
-          <td>制作23万円 ＋ 店舗1万円×店数 ＋ <span class="price">月3万円</span></td>
+          <th>初年度の内訳</th>
+          <td>
+            <span class="price">65万円</span>
+            <span class="sub">制作23万円 ＋（店舗利用＋伴走）42万円</span>
+            <span class="fit">1年間かけて、しっかりブラッシュアップしていきたい方向け</span>
+          </td>
+          <td>
+            <span class="price">制作23万円 ＋ 店舗1万円×店数 ＋ 月3万円×12</span>
+            <span class="sub">例（10店舗）：23万＋10万＋月3万×12＝初年度おおよそ69万円</span>
+            <span class="fit">月額で契約して様子を見たい／その都度で考えたい方向け</span>
+          </td>
         </tr>
         <tr>
           <th>店舗での利用</th>
@@ -187,17 +213,12 @@
         <tr>
           <th>ミーティング</th>
           <td><strong>月2回まで</strong>（導入初期は隔週を推奨）</td>
-          <td><strong>月1回まで</strong>（2回目は都度ご相談）＋軽微修正<strong>月3箇所まで</strong></td>
+          <td><strong>月1回まで</strong>（2回目は都度ご相談）</td>
         </tr>
         <tr>
           <th>軽微な修正</th>
-          <td>文言・テロップ・イラストの差し替え</td>
-          <td>同左（<strong>月3箇所まで</strong>込み）</td>
-        </tr>
-        <tr>
-          <th>章単位の見直し</th>
-          <td><strong>年2回まで込み</strong></td>
-          <td>都度お見積もり</td>
+          <td>文言・テロップ・イラストの差し替え　<strong>月6箇所まで</strong></td>
+          <td>同左（<strong>月6箇所まで</strong>）</td>
         </tr>
         <tr>
           <th>ほぼ作り直し</th>
@@ -207,15 +228,20 @@
         <tr>
           <th>お支払い</th>
           <td>納品時 <strong>30万円</strong> ／ 納品の1ヶ月後に残金 <strong>35万円</strong></td>
-          <td>納品時 ＋ 月次（前月までにお願いします）</td>
+          <td>
+            <strong>納品時</strong>：制作23万円 ＋ 店舗1万円×店数 ＋ 伴走<strong>3ヶ月分</strong>（月3万円×3）<br />
+            <strong>その後</strong>：毎月、前月までに伴走 <strong>月3万円</strong><br />
+            <span style="font-weight:400;color:#5a6577;font-size:12.5px">最低契約期間　3ヶ月</span>
+          </td>
         </tr>
         <tr>
           <th>伴走期間</th>
-          <td colspan="2"><strong>動画納品日から1年間</strong></td>
+          <td><strong>動画納品日から1年間</strong></td>
+          <td>最低3ヶ月〜（継続は月次）</td>
         </tr>
       </tbody>
     </table>
-    <p class="note">プランBの例（10店舗）：23万＋10万＋月3万×12＝初年度おおよそ69万円。ほぼ作り直し（当該制作費のおよそ8割目安）があれば加算。</p>
+    <p class="note">プランB・納品時の例（10店舗）：23万＋10万＋9万（3ヶ月分）＝42万円。その後、4ヶ月目から毎月3万円（前月までにお支払い）。</p>
 
     <h2>伴走で一緒に見ること</h2>
     <ul class="points">
